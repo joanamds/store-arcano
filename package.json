@@ -1,0 +1,20 @@
+{
+  "name": "store-arcano",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joanamds/store-arcano.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joanamds/store-arcano/issues"
+  },
+  "homepage": "https://github.com/joanamds/store-arcano#readme"
+}
