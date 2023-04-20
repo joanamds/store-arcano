@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/joanamds/store-arcano/issues"
   },
-  "homepage": "https://github.com/joanamds/store-arcano#readme"
+  "homepage": "https://github.com/joanamds/store-arcano#readme",
+  "dependencies": {
+    "git-commit-msg-linter": "^4.10.0"
+  }
 }
