@@ -1,4 +1,3 @@
-// fonte: https://github.com/joanamds/projeto-tfc/blob/main/app/backend/src/server.ts
 import { App } from './app';
 import 'dotenv/config';
 

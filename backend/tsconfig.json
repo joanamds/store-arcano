@@ -1,4 +1,3 @@
-// fonte: https://github.com/joanamds/projeto-tfc/blob/main/app/backend/tsconfig.json
 {
   "compilerOptions": {
     "target": "es2019",
