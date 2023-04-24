@@ -5,7 +5,6 @@ module.exports = {
     await queryInterface.createTable('products', {
       id: {
         primaryKey: true,
-        autoIncrement: true,
         type: Sequelize.INTEGER,
         allowNull: false,
       },
@@ -20,7 +19,7 @@ module.exports = {
         field: 'price',
       },
       description: {
-        type: Sequelize.STRING(900),
+        type: Sequelize.STRING(5000),
         allowNull: false,
         field: 'description'
       },
