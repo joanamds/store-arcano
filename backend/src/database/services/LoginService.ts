@@ -14,7 +14,7 @@ export default class ProductsService {
     const user = await this.usersModel.findOne({
       where: { email }
     });
-    if(!user) return { status: 400, message: 'Usuário não encontrado'};
+    if(!user) return { status: 401, message: 'Email não cadastrado'};
     if(user.password !== password) return { status: 401, message: 'Senha incorreta'};
     const token = jwt.sign(
       { id: user.dataValues.id }, 

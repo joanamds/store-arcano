@@ -11,6 +11,9 @@ export default class ProductsController {
 
   public async login(req: Request, res: Response) {
     const { email, password } = req.body;
+    if (!email || !password) {
+      res.status(400).json({ message: 'Todos os campos precisam ser preenchidos' })
+    }
     const user = await this.loginService.login(email, password);
     const { status, message } = user;
     if(status === 200) {
