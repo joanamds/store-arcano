@@ -6,7 +6,6 @@ module.exports = {
       id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
-        autoIncrement: true,
         allowNull: false
       },
       userId: {
@@ -20,7 +19,7 @@ module.exports = {
         onDelete: 'CASCADE'
       },
       date: {
-        type: Sequelize.DATE,
+        type: Sequelize.STRING,
         allowNull: false
       },
       __v: {
