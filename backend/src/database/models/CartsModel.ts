@@ -1,6 +1,7 @@
 import { Model, DataTypes } from 'sequelize';
 import db from '.';
 import CartItemsModel from './CartItemsModel';
+import UsersModel from './UsersModel';
 
 class CartsModel extends Model {
   public id!: number;
@@ -18,6 +19,7 @@ CartsModel.init({
   userId: {
     type: DataTypes.INTEGER,
     allowNull: false,
+    field: 'user_id'
   },
 }, {
   sequelize: db,
@@ -27,9 +29,9 @@ CartsModel.init({
   underscored: true,
 });
 
-CartsModel.hasMany(CartItemsModel, {
-  as: 'cartItems',
-  foreignKey: 'cartId',
-});
+CartsModel.hasMany(CartItemsModel, { as: 'cartItems', foreignKey: 'cartId'});
+CartItemsModel.belongsTo(CartsModel, { as: 'carts' });
+CartsModel.belongsTo(UsersModel, { as: 'users' });
+UsersModel.hasMany(CartsModel, { as: 'carts', foreignKey: 'userId'});
 
 export default CartsModel;

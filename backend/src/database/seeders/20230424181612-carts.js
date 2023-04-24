@@ -8,7 +8,7 @@ module.exports = {
     const tableCarts = carts.map(cart => {
       return {
         id: cart.id,
-        userId: cart.userId,
+        user_id: cart.userId,
         date: cart.date,
         __v: cart.__v
       };
@@ -16,8 +16,8 @@ module.exports = {
     const tableCartItems = carts.flatMap(cart => {
       return cart.products.map(product => {
         return {
-          cartId: cart.id,
-          productId: product.productId,
+          cart_id: cart.id,
+          product_id: product.productId,
           quantity: product.quantity
         };
       });

@@ -11,6 +11,7 @@ module.exports = {
       userId: {
         type: Sequelize.INTEGER,
         allowNull: false,
+        field: 'user_id',
         references: {
           model: 'users',
           key: 'id'
@@ -38,7 +39,7 @@ module.exports = {
         autoIncrement: true,
         allowNull: false
       },
-      cart_id: {
+      cartId: {
         type: Sequelize.INTEGER,
         allowNull: false,
         references: {
@@ -47,9 +48,9 @@ module.exports = {
         },
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
-        field: 'cartId' 
+        field: 'cart_id' 
       },
-      product_idd: {
+      productId: {
         type: Sequelize.INTEGER,
         allowNull: false,
         references: {
@@ -58,7 +59,7 @@ module.exports = {
         },
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
-        field: 'productId'
+        field: 'product_id'
       },
       quantity: {
         type: Sequelize.INTEGER,

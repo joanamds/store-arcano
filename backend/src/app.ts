@@ -1,5 +1,5 @@
 import * as express from 'express';
-import { LoginRouter, ProductsRouter } from './routes';
+import { CartHistoryRouter, LoginRouter, ProductsRouter } from './routes';
 class App {
   public app: express.Express;
 
@@ -24,6 +24,7 @@ class App {
     this.app.use(accessControl);
     this.app.use('/products', ProductsRouter);
     this.app.use('/login', LoginRouter);
+    this.app.use('/cart-history', CartHistoryRouter)
   }
 
   public start(PORT: string | number): void {

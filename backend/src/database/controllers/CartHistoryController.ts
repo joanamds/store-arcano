@@ -1,12 +1,13 @@
 import { Request, Response } from 'express';
 import CartHistoryService from '../services/CartHistoryService';
-import CartHistoryModel from '../models/CartHistoryModel';
+import CartsModel from '../models/CartsModel';
+import CartItemsModel from '../models/CartItemsModel';
 
 export default class ProductsController {
   private cartHistoryService: CartHistoryService;
 
   constructor() {
-    this.cartHistoryService = new CartHistoryService(CartHistoryModel);
+    this.cartHistoryService = new CartHistoryService(CartsModel, CartItemsModel);
   }
 
   public async getCarts(req: Request, res: Response) {

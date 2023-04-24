@@ -1,6 +1,5 @@
 import { Model, DataTypes } from 'sequelize';
 import db from '.';
-import CartsModel from './CartsModel';
 
 class CartItemsModel extends Model {
   public id!: number;
@@ -22,10 +21,12 @@ CartItemsModel.init({
   productId: {
     type: DataTypes.INTEGER,
     allowNull: false,
+    field: 'product_id'
   },
   cartId: {
     type: DataTypes.INTEGER,
     allowNull: false,
+    field: 'cart_id'
   },
   quantity: {
     type: DataTypes.INTEGER,
@@ -33,15 +34,10 @@ CartItemsModel.init({
   },
 }, {
   sequelize: db,
-  modelName: 'cartItem',
+  modelName: 'cartItems',
   timestamps: true,
   paranoid: true,
   underscored: true,
-});
-
-CartItemsModel.belongsTo(CartsModel, {
-  as: 'cart',
-  foreignKey: 'cartId',
 });
 
 export default CartItemsModel;
