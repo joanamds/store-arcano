@@ -8,7 +8,6 @@ class CartHistoryModel extends Model {
   public id!: number;
   public userId!: number;
   public date!: string;
-  public totalValue!: number;
 
   public carts!: CartsModel[];
   public cartItems!: CartItemsModel[];
@@ -27,10 +26,6 @@ CartHistoryModel.init({
   },
   date: {
     type: DataTypes.STRING,
-    allowNull: false,
-  },
-  totalValue: {
-    type: DataTypes.FLOAT,
     allowNull: false,
   },
 }, {
