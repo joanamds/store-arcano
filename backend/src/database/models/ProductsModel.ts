@@ -23,7 +23,7 @@ ProductsModel.init({
     field: 'title'
   },
   price: {
-    type: DataTypes.INTEGER,
+    type: DataTypes.DECIMAL(7, 2),
     allowNull: false,
     field: 'price',
   },

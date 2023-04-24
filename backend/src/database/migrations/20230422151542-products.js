@@ -14,7 +14,7 @@ module.exports = {
         field: 'title'
       },
       price: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.DECIMAL(7, 2),
         allowNull: false,
         field: 'price',
       },
