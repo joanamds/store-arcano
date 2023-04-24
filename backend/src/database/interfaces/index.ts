@@ -8,13 +8,7 @@ export interface Product {
   rating: object
 }
 
-export interface User {
-  id: number,
-  email: string,
-  username: string,
-  name: object,
-  password: string,
-  phone: string,
-  address: object,
-  __v: number
+export interface StatusMessage {
+  status: number,
+  message: string,
 }
