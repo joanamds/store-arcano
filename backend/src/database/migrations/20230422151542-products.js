@@ -19,10 +19,20 @@ module.exports = {
         allowNull: false,
         field: 'price',
       },
+      description: {
+        type: Sequelize.STRING(900),
+        allowNull: false,
+        field: 'description'
+      },
       category: {
         type: Sequelize.STRING,
         allowNull: false,
         field: 'category'
+      },
+      image: {
+        type: Sequelize.STRING,
+        allowNull: true,
+        field: 'image',
       },
       rating: {
         type: Sequelize.JSON,
