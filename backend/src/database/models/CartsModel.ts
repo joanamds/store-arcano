@@ -24,14 +24,14 @@ CartsModel.init({
 }, {
   sequelize: db,
   modelName: 'carts',
-  timestamps: true,
-  paranoid: true,
+  timestamps: false,
   underscored: true,
 });
 
-CartsModel.hasMany(CartItemsModel, { as: 'cartItems', foreignKey: 'cartId'});
-CartItemsModel.belongsTo(CartsModel, { as: 'carts' });
-CartsModel.belongsTo(UsersModel, { as: 'users' });
-UsersModel.hasMany(CartsModel, { as: 'carts', foreignKey: 'userId'});
+CartItemsModel.belongsTo(CartsModel, { foreignKey: 'cartId', as: 'carts'});
+CartsModel.belongsTo(UsersModel, { foreignKey: 'userId', as: 'users' });
+
+UsersModel.hasMany(CartsModel, { as: 'carts' });
+CartsModel.hasMany(CartItemsModel, { as: 'cartItems' });
 
 export default CartsModel;

@@ -1,14 +1,12 @@
 import { Model, DataTypes } from 'sequelize';
 import db from '.';
+import ProductsModel from './ProductsModel';
 
 class CartItemsModel extends Model {
   public id!: number;
   public productId!: number;
   public cartId!: number;
   public quantity!: number;
-
-  public readonly createdAt!: Date;
-  public readonly updatedAt!: Date;
 }
 
 CartItemsModel.init({
@@ -35,9 +33,11 @@ CartItemsModel.init({
 }, {
   sequelize: db,
   modelName: 'cartItems',
-  timestamps: true,
-  paranoid: true,
+  timestamps: false,
   underscored: true,
 });
+
+CartItemsModel.hasMany(ProductsModel, { foreignKey: 'productId', as: 'products'});
+ProductsModel.belongsTo(CartItemsModel, { as: 'cartItems' });
 
 export default CartItemsModel;
