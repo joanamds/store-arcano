@@ -6,6 +6,7 @@ function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isLogged, setIsLogged] = useState(false);
+  const [id, setId ] = useState(0);
 
   const handleChange = ({ target }) => {
     if (target.name === 'email') {
@@ -20,17 +21,21 @@ function Login() {
 
     try {
       const { token, userId } = await requestLogin('/login', { email, password });
-      setIsLogged(true);
       setToken(token);
+      setId(userId);
+      setIsLogged(true);
     } catch (error) {
       console.log(error);
     }
   }
 
-  if (isLogged) return <Navigate to="/home" />;
-
+  if (isLogged) {
+    console.log(id);
+    return <Navigate to={`/home/${id}`} />;
+  }
+  
   return (
-    <form>
+    <form onSubmit={ login } >
       <label htmlFor="email">
         <input
           type="text"
@@ -49,7 +54,7 @@ function Login() {
           placeholder='password'
         />
       </label>
-      <button onClick={ login }>Entrar</button>
+      <button type="submit">Entrar</button>
     </form>
   );
 }

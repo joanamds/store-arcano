@@ -23,7 +23,7 @@ export const requestLogin = async (endpoint, body) => {
   const { data } = await api.post(endpoint, body);
   const token = data.token;
   const decodedToken = jwt.decode(token);
-  const userId = decodedToken.userId;
+  const userId = decodedToken.id;
   setToken(token);
   return { token, userId };
 };
