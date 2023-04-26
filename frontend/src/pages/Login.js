@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
+import { requestLogin, setToken } from '../services/storeAPI';
+import { Navigate } from 'react-router-dom';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [isLogged, setIsLogged] = useState(false);
 
   const handleChange = ({ target }) => {
     if (target.name === 'email') {
@@ -11,6 +14,20 @@ function Login() {
       setPassword(target.value)
     }
   }
+
+  const login = async (event) => {
+    event.preventDefault();
+
+    try {
+      const { token, userId } = await requestLogin('/login', { email, password });
+      setIsLogged(true);
+      setToken(token);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  if (isLogged) return <Navigate to="/home" />;
 
   return (
     <form>
@@ -32,7 +49,7 @@ function Login() {
           placeholder='password'
         />
       </label>
-      <button>Entrar</button>
+      <button onSubmit={ login }>Entrar</button>
     </form>
   );
 }
