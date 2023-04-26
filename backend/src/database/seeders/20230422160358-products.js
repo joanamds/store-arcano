@@ -5,16 +5,10 @@ const fetchAPI = require("../api/fakeStore");
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     const products = await fetchAPI('products');
-    const productsWithJsonRating = products.map(product => {
-      return {
-        ...product,
-        rating: JSON.stringify(product.rating)
-      };
-    });
-    await queryInterface.bulkInsert('products', productsWithJsonRating);
+    await queryInterface.bulkInsert('Products', products);
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.bulkDelete('products', null, {});
+    await queryInterface.bulkDelete('Products', null, {});
   }
 };
