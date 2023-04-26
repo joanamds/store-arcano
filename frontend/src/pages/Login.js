@@ -49,7 +49,7 @@ function Login() {
           placeholder='password'
         />
       </label>
-      <button onSubmit={ login }>Entrar</button>
+      <button onClick={ login }>Entrar</button>
     </form>
   );
 }
