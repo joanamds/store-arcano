@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { requestUser, requestCartHistory, requestProducts } from '../services/storeAPI';
 import CartItemCard from '../components/CartItemCard';
 import ProductCard from '../components/ProductCard';
+import '../styles/Home.css';
 
 function Home() {
   const { id } = useParams();
@@ -43,7 +44,7 @@ function Home() {
       { cartHistory ?
         cartHistory.map((cart) => {
           return (
-            <div key={ cart.id }>
+            <div key={ cart.id } className="cart-list">
               <h2>{ formatDate(cart.date) }</h2>
               {cart.cartItems.map((item) => (
                 <CartItemCard
@@ -60,8 +61,8 @@ function Home() {
         : ''
       }
     </div>
+    <h2>Faça uma nova compra!</h2>
     <div className="products-list">
-      <h2>Faça uma nova compra!</h2>
       {
         products ?
         products.map((product) => {
