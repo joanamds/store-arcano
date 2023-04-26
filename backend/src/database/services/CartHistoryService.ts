@@ -20,17 +20,17 @@ export default class CartHistoryService {
   public async getCarts(id: number): Promise<any> {
     const carts = await this.cartsModel.findAll({
       where: { userId: id },
-      include: {
+      include: [{
         model: this.cartItemsModel,
         as: 'cartItems',
         include: [{
           model: this.productsModel,
           as: 'products',
-          attributes: ['title', 'image', 'price'],
+          attributes: ['title', 'price']
         }],
-        attributes: ['quantity'],
-      },
+        attributes: ['quantity']
+      }],
     });
     return carts;
-  }
+  }  
 }
