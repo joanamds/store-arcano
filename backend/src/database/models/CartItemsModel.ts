@@ -37,7 +37,7 @@ CartItemsModel.init({
   underscored: true,
 });
 
-CartItemsModel.belongsTo(ProductsModel, { foreignKey: 'product_id', as: 'products' });
+CartItemsModel.belongsTo(ProductsModel, { foreignKey: 'product_id', as: 'product' });
 
 ProductsModel.hasMany(CartItemsModel, { foreignKey: 'product_id', as: 'cartItems' });
 

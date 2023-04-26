@@ -25,7 +25,7 @@ export default class CartHistoryService {
         as: 'cartItems',
         include: [{
           model: this.productsModel,
-          as: 'products',
+          as: 'product',
           attributes: ['title', 'price']
         }],
         attributes: ['quantity']

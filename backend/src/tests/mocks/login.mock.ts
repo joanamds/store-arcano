@@ -1,13 +1,13 @@
 export const invalidEmail = {
-	message: "Email não cadastrado"
+	message: "Email not found"
 }
 
 export const invalidPassword = {
-	message: "Senha incorreta"
+	message: "Incorrect password"
 }
 
 export const missingFields = {
-	message: "Todos os campos precisam ser preenchidos"
+	message: "All fields must be filled"
 }
 
 export const validLogin = {
