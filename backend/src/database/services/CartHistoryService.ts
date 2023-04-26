@@ -30,7 +30,8 @@ export default class CartHistoryService {
         }],
         attributes: ['quantity']
       }],
+      attributes: ['date']
     });
     return carts;
-  }  
+  }
 }

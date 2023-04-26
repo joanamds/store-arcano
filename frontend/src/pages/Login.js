@@ -30,7 +30,6 @@ function Login() {
   }
 
   if (isLogged) {
-    console.log(id);
     return <Navigate to={`/home/${id}`} />;
   }
   

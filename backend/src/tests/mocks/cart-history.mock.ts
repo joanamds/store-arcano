@@ -1,7 +1,6 @@
 export const cartItems = [
 	{
-		"id": 1,
-		"userId": 1,
+		"date": "2020-03-02T00:00:00.000Z",
 		"cartItems": [
 			{
 				"quantity": 4,
@@ -30,8 +29,7 @@ export const cartItems = [
 		]
 	},
 	{
-		"id": 2,
-		"userId": 1,
+		"date": "2020-01-02T00:00:00.000Z",
 		"cartItems": [
 			{
 				"quantity": 4,

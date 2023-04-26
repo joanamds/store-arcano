@@ -9,6 +9,11 @@ export const setToken = (token) => {
   api.defaults.headers.common.Authorization = token;
 };
 
+export const requestUser = async (endpoint, userId) => {
+  const { data } = await api.get(`${endpoint}/${userId}`);
+  return data;
+}
+
 export const requestProducts = async (endpoint) => {
   const { data } = await api.get(endpoint);
   return data;
