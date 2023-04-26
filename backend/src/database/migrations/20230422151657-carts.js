@@ -6,21 +6,21 @@ module.exports = {
       id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
-        autoIncrement: true,
         allowNull: false
       },
       userId: {
         type: Sequelize.INTEGER,
         allowNull: false,
+        field: 'user_id',
         references: {
           model: 'users',
           key: 'id'
         },
         onUpdate: 'CASCADE',
-        onDelete: 'CASCADE'
+        onDelete: 'CASCADE',
       },
       date: {
-        type: Sequelize.DATE,
+        type: Sequelize.STRING,
         allowNull: false
       },
       __v: {
@@ -28,6 +28,8 @@ module.exports = {
         allowNull: false,
         defaultValue: 0
       }
+    }, {
+      underscored: true,
     });
 
     await queryInterface.createTable('cart_items', {
@@ -45,7 +47,8 @@ module.exports = {
           key: 'id'
         },
         onUpdate: 'CASCADE',
-        onDelete: 'CASCADE'
+        onDelete: 'CASCADE',
+        field: 'cart_id' 
       },
       productId: {
         type: Sequelize.INTEGER,
@@ -55,12 +58,15 @@ module.exports = {
           key: 'id'
         },
         onUpdate: 'CASCADE',
-        onDelete: 'CASCADE'
+        onDelete: 'CASCADE',
+        field: 'product_id'
       },
       quantity: {
         type: Sequelize.INTEGER,
         allowNull: false
       }
+    }, {
+      underscored: true,
     });
   },
 
