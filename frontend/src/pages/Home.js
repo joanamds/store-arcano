@@ -26,6 +26,14 @@ function Home() {
     return `Compra efetuada no dia: ${day}/${month}/${year}`;
   }
   
+  function calculateTotal(cartItems) {
+    let total = 0;
+    cartItems.forEach((item) => {
+      total += item.quantity * item.product.price;
+    });
+    return total;
+  }
+
   return (
     <div>
       <h1>{`Bem vindo(a) ${ user ? user.username : '' }`}</h1>
@@ -44,6 +52,7 @@ function Home() {
                   image={ item.product.image }
                 />
               ))}
+              <h2>Total da compra: ${calculateTotal(cart.cartItems).toFixed(2)}</h2>
             </div>
           );
         }) 
