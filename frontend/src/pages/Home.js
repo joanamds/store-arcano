@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { requestUser, requestCartHistory } from '../services/storeAPI';
+import { requestUser, requestCartHistory, requestProducts } from '../services/storeAPI';
 import CartItemCard from '../components/CartItemCard';
+import ProductCard from '../components/ProductCard';
 
 function Home() {
   const { id } = useParams();
   const [user, setUser] = useState(null);
   const [cartHistory, setCartHistory] = useState([]);
-  // const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -15,8 +16,8 @@ function Home() {
       setUser(userData);
       const cartHistoryData = await requestCartHistory('/cart-history', id);
       setCartHistory(cartHistoryData);
-      // const productsData = await requestProducts('/products');
-      // setProducts(productsData);
+      const productsData = await requestProducts('/products');
+      setProducts(productsData);
     };
     fetchData();
   }, [id]);
@@ -56,6 +57,25 @@ function Home() {
             </div>
           );
         }) 
+        : ''
+      }
+    </div>
+    <div className="products-list">
+      <h2>Faça uma nova compra!</h2>
+      {
+        products ?
+        products.map((product) => {
+          return(
+            <ProductCard
+              title={ product.title }
+              price={ product.price }
+              description={ product.description }
+              category={ product.category }
+              image={ product.image }
+              rating={ product.rating }
+            />
+          )
+        })
         : ''
       }
     </div>
