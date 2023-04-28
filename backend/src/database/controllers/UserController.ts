@@ -15,4 +15,4 @@ export default class UserController {
     const user = await this.userService.getUser(numberId);
     return res.status(200).json(user);
   }
-}
+} 
