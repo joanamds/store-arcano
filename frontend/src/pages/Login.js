@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { requestLogin, setToken } from '../services/storeAPI';
 import { Navigate } from 'react-router-dom';
+import { FormControl, InputLabel, Input, InputAdornment, Button, TextField, Typography } from '@mui/material';
+import AccountCircle from '@mui/icons-material/AccountCircle';
+import PasswordIcon from '@mui/icons-material/Password';
+import '../styles/Login.css';
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -36,28 +40,50 @@ function Login() {
   }
   
   return (
-    <form onSubmit={ login } >
-      <label htmlFor="email">
-        <input
+    <div className="login-page">
+    <form onSubmit={ login } className="form-login">
+      <FormControl variant="standard" className="input-email">
+        <InputLabel htmlFor="email">
+          Email
+        </InputLabel>
+        <Input
+          id="input-with-icon-adornment"
           type="text"
           name="email"
           value={ email }
           onChange={ handleChange }
-          placeholder='email'
+          startAdornment={
+            <InputAdornment position="start">
+              <AccountCircle />
+            </InputAdornment>
+          }
         />
-      </label>
-      <label htmlFor="password">
-        <input
+      </FormControl>
+      <FormControl variant="standard" className="input-password">
+        <InputLabel htmlFor="password">
+          Senha
+        </InputLabel>
+        <Input
+          id="input-with-icon-adornment"
           type="password"
           name="password"
           value={ password }
           onChange={ handleChange }
-          placeholder='password'
+          startAdornment={
+            <InputAdornment position="start">
+              <PasswordIcon />
+            </InputAdornment>
+          }
         />
-      </label>
-      {error && <p>Email ou senha incorretos</p>}
-      <button type="submit">Entrar</button>
+      </FormControl>
+      {error && (
+        <Typography variant="caption" color="error">
+          Login inválido.
+        </Typography>
+      )}
+      <Button type="submit">Entrar</Button>
     </form>
+    </div>
   );
 }
 

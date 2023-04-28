@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { requestUser, requestProducts } from '../services/storeAPI';
 import ProductCard from '../components/ProductCard';
-import '../styles/Home.css';
 import Header from '../components/Header';
+import '../styles/Home.css';
 
 function Home() {
   const { id } = useParams();
@@ -27,7 +27,7 @@ function Home() {
         linkCartHistory={`/cart-history/${id}`}
         linkProfile={`/profile/${id}`}
       />
-    <h1>{`Bem vindo(a) ${ user ? user.username : '' }`}</h1>
+    <h1 className="welcome-message">{`Bem vindo(a) ${ user ? user.username : '' }`}</h1>
     <h2>Faça uma nova compra!</h2>
     <div className="products-list">
       {

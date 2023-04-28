@@ -1,5 +1,4 @@
 import React from 'react';
-import '../styles/CartItemCard.css';
 
 function CartItemCard({quantity, title, price, image}) {
   return(

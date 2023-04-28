@@ -1,0 +1,15 @@
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form-login {
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  background-color: aliceblue;
+  padding: 30px;
+}
