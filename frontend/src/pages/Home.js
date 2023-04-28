@@ -4,7 +4,7 @@ import { requestUser, requestProducts } from '../services/storeAPI';
 import ProductCard from '../components/ProductCard';
 import Header from '../components/Header';
 import '../styles/Home.css';
-import ProductCard2 from '../components/ProductCard2';
+import Footer from '../components/Footer';
 
 function Home() {
   const { id } = useParams();
@@ -29,13 +29,14 @@ function Home() {
         linkProfile={`/profile/${id}`}
       />
     <h1 className="welcome-message">{`Bem vindo(a) ${ user ? user.username : '' }`}</h1>
-    <h2>Faça uma nova compra!</h2>
+    <h2 className="lets-shop">Faça uma nova compra!</h2>
     <div className="products-list">
       {
         products ?
         products.map((product) => {
           return(
-            <ProductCard2
+            <ProductCard
+              className="product-card"
               title={ product.title }
               price={ product.price }
               description={ product.description }
@@ -48,6 +49,7 @@ function Home() {
         : ''
       }
     </div>
+    <Footer />
     </div>
   );
 }

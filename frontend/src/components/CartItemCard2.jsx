@@ -6,14 +6,9 @@ import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
 import Collapse from '@mui/material/Collapse';
-import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import { red } from '@mui/material/colors';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
 import CheckroomIcon from '@mui/icons-material/Checkroom';
 import DiamondIcon from '@mui/icons-material/Diamond';
 import ComputerIcon from '@mui/icons-material/Computer';
@@ -31,7 +26,7 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-export default function ProductCard2({ title, price, description, category, image, rating }) {
+export default function CartItem2({quantity, title, price, image}) {
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
@@ -64,7 +59,7 @@ export default function ProductCard2({ title, price, description, category, imag
         height="194"
         image={ image }
         alt={ title }
-        style={{objectFit: "cover"}}
+        style={{objectFit: "contain"}}
       />
       <CardActions disableSpacing>
       <p>Category: </p>
