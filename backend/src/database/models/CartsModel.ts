@@ -16,6 +16,11 @@ CartsModel.init({
     autoIncrement: true,
     allowNull: false,
   },
+  date: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    field: 'date'
+  },
   userId: {
     type: DataTypes.INTEGER,
     allowNull: false,
@@ -30,7 +35,6 @@ CartsModel.init({
 
 CartItemsModel.belongsTo(CartsModel, { foreignKey: 'cartId', as: 'carts'});
 CartsModel.belongsTo(UsersModel, { foreignKey: 'userId', as: 'users' });
-
 UsersModel.hasMany(CartsModel, { as: 'carts' });
 CartsModel.hasMany(CartItemsModel, { as: 'cartItems' });
 
