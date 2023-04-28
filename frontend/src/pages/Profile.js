@@ -5,7 +5,7 @@ import Header from '../components/Header';
 
 function Profile() {
   const { id } = useParams();
-  const [user, setUser] = useState([]);
+  const [user, setUser] = useState(undefined);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -23,7 +23,7 @@ function Profile() {
         linkProfile={`/profile/${id}`}
       />
     <div className="profile">
-      { user ?
+      { user !== undefined ?
       <div className="profile-data">
       <h1>{ user.username }</h1>
       <p>{ `Nome: ${user.name.firstname} ${user.name.lastname}` }</p>

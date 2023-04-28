@@ -46,7 +46,7 @@ UsersModel.init({
   address: {
     type: DataTypes.JSON,
     allowNull: false,
-    field: 'phone'
+    field: 'address'
   },
   __v: {
     type: DataTypes.INTEGER,
