@@ -7,6 +7,7 @@ function Login() {
   const [password, setPassword] = useState('');
   const [isLogged, setIsLogged] = useState(false);
   const [id, setId ] = useState(0);
+  const [error, setError] = useState(false);
 
   const handleChange = ({ target }) => {
     if (target.name === 'email') {
@@ -25,7 +26,8 @@ function Login() {
       setId(userId);
       setIsLogged(true);
     } catch (error) {
-      console.log(error);
+      setError(true);
+      setIsLogged(false);
     }
   }
 
@@ -53,6 +55,7 @@ function Login() {
           placeholder='password'
         />
       </label>
+      {error && <p>Email ou senha incorretos</p>}
       <button type="submit">Entrar</button>
     </form>
   );

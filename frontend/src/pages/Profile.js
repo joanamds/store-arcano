@@ -24,7 +24,13 @@ function Profile() {
       />
     <div className="profile">
       { user ?
+      <div className="profile-data">
       <h1>{ user.username }</h1>
+      <p>{ `Nome: ${user.name.firstname} ${user.name.lastname}` }</p>
+      <p>{ `Email: ${user.email}` }</p>
+      <p>{ `Telefone: ${user.phone}` }</p>
+      <p>{`Endereço: ${user.address.street}, ${user.address.number}, ${user.address.city}`}</p>
+      </div>
       : ''}
     </div>
     </div>
