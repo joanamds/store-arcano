@@ -5,6 +5,7 @@ import { FormControl, InputLabel, Input, InputAdornment, Button, TextField, Typo
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import PasswordIcon from '@mui/icons-material/Password';
 import '../styles/Login.css';
+import Footer from '../components/Footer';
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -83,6 +84,7 @@ function Login() {
       )}
       <Button type="submit">Entrar</Button>
     </form>
+    <Footer />
     </div>
   );
 }

@@ -3,6 +3,7 @@ import CartItemCard from '../components/CartItemCard';
 import { useParams } from 'react-router-dom';
 import { requestCartHistory } from '../services/storeAPI';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 function CartHistory() {
   const { id } = useParams();
@@ -59,6 +60,7 @@ function CartHistory() {
         : ''
       }
     </div>
+    <Footer />
     </div>
   );
 }

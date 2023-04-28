@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { requestUser } from '../services/storeAPI';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 function Profile() {
   const { id } = useParams();
@@ -33,6 +34,7 @@ function Profile() {
       </div>
       : ''}
     </div>
+    <Footer />
     </div>
   );
 }
