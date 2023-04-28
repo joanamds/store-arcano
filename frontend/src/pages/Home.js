@@ -4,6 +4,7 @@ import { requestUser, requestProducts } from '../services/storeAPI';
 import ProductCard from '../components/ProductCard';
 import Header from '../components/Header';
 import '../styles/Home.css';
+import ProductCard2 from '../components/ProductCard2';
 
 function Home() {
   const { id } = useParams();
@@ -34,13 +35,13 @@ function Home() {
         products ?
         products.map((product) => {
           return(
-            <ProductCard
+            <ProductCard2
               title={ product.title }
               price={ product.price }
               description={ product.description }
               category={ product.category }
               image={ product.image }
-              rating={ product.rating }
+              rating={ product.rating.rate }
             />
           )
         })

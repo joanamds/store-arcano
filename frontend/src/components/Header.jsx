@@ -70,13 +70,6 @@ function Header2({ linkHome, linkCartHistory, linkProfile }) {
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             <Button
               component="a"
-              href={ linkHome }
-              sx={{ my: 2, color: 'white', display: 'block' }}
-            >
-              PRODUCTS
-            </Button>
-            <Button
-              component="a"
               href="https://fakestoreapi.com/"
               target="_blank"
               sx={{ my: 2, color: 'white', display: 'block' }}
