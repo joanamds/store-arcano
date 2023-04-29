@@ -14,6 +14,7 @@ import DiamondIcon from '@mui/icons-material/Diamond';
 import ComputerIcon from '@mui/icons-material/Computer';
 import { Tooltip } from '@mui/material';
 import GradeIcon from '@mui/icons-material/Grade';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -62,14 +63,19 @@ export default function ProductCard({ title, price, description, category, image
         style={{objectFit: "contain"}}
       />
       <CardActions disableSpacing>
+      <Tooltip title="add to cart">
+        <IconButton aria-label="add to cart">
+          <AddShoppingCartIcon />
+        </IconButton>
+      </Tooltip>
       <p>Category: </p>
       <Tooltip title={ category }>
-        <IconButton aria-label="add to favorites">
+        <IconButton aria-label="category">
           { getIcon(category) }
         </IconButton>
       </Tooltip>
       <Tooltip title="rating">
-        <IconButton aria-label="add to favorites">
+        <IconButton aria-label="rating">
           <GradeIcon />
         </IconButton>
       </Tooltip>

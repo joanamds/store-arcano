@@ -11,8 +11,9 @@ import Tooltip from '@mui/material/Tooltip';
 import StoreIcon from '@mui/icons-material/Store';
 import HistoryIcon from '@mui/icons-material/History';
 import { Avatar } from '@mui/material';
+import LogoutIcon from '@mui/icons-material/Logout';
 
-function Header2({ linkHome, linkCartHistory, linkProfile, name }) {
+function Header({ avatar, linkHome, linkCartHistory, linkProfile, linkLogin }) {
   function stringToColor(string) {
     let hash = 0;
     let i;
@@ -32,14 +33,22 @@ function Header2({ linkHome, linkCartHistory, linkProfile, name }) {
   
     return color;
   }
+
   function stringAvatar(name) {
+    if (!name) {
+      return {};
+    }
+  
+    const nameParts = name.split(' ');
+  
     return {
       sx: {
         bgcolor: stringToColor(name),
       },
-      children: `${name.split(' ')[0][0]}${name.split(' ')[1][0]}`,
+      children: `${nameParts[0][0]}${nameParts[1][0]}`,
     };
   }
+
   return (
     <AppBar sx={{margin: 0, padding: 0}}>
       <Container maxWidth="xl">
@@ -121,7 +130,16 @@ function Header2({ linkHome, linkCartHistory, linkProfile, name }) {
                 sx={{ p: 0 }}
               >
                 {/* <AccountCircle /> */}
-                <Avatar {...stringAvatar(name)} />
+                <Avatar {...stringAvatar(avatar)} />
+              </IconButton>
+            </Tooltip>
+            <Tooltip title="Logout">
+              <IconButton
+                component="a"
+                href={ linkLogin }
+                sx={{ p: 0, ml: 3 }}
+              >
+                <LogoutIcon />
               </IconButton>
             </Tooltip>
           </Box>
@@ -131,4 +149,4 @@ function Header2({ linkHome, linkCartHistory, linkProfile, name }) {
   );
 }
 
-export default Header2;
+export default Header;

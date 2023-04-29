@@ -24,10 +24,11 @@ function Home() {
   return (
     <div>
       <Header
-        name={`${user.name.firstName} ${user.name.lastName}`}
+        avatar={ user ? `${user.name.firstname} ${user.name.lastname}` : '' }
         linkHome={`/home/${id}`}
         linkCartHistory={`/cart-history/${id}`}
         linkProfile={`/profile/${id}`}
+        linkLogin={'/'}
       />
     <h1 className="welcome-message">{`Welcome ${ user ? user.username : '' }`}</h1>
     <h2 className="lets-shop">Let's shop!</h2>

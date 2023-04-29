@@ -40,10 +40,11 @@ function CartHistory() {
   return (
     <div className="page-cart">
       <Header
-        name={`${user.name.firstName} ${user.name.lastName}` }
+        avatar={ user ? `${user.name.firstname} ${user.name.lastname}` : '' }
         linkHome={`/home/${id}`}
         linkCartHistory={`/cart-history/${id}`}
         linkProfile={`/profile/${id}`}
+        linkLogin={'/'}
       />
     <h2 className="welcome-message">Cart history</h2>
     <div className="cart-history">

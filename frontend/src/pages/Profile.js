@@ -22,10 +22,11 @@ function Profile() {
   return(
     <div className="profile-page">
       <Header
-        name={`${user.name.firstName} ${user.name.lastName}`}
+        avatar={ user ? `${user.name.firstname} ${user.name.lastname}` : '' }
         linkHome={`/home/${id}`}
         linkCartHistory={`/cart-history/${id}`}
         linkProfile={`/profile/${id}`}
+        linkLogin={'/'}
       />
     <div className="profile-content">
     <div className="profile">
