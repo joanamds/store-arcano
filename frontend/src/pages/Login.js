@@ -62,7 +62,7 @@ function Login() {
       </FormControl>
       <FormControl variant="standard" className="input-password">
         <InputLabel htmlFor="password">
-          Senha
+          Password
         </InputLabel>
         <Input
           id="input-with-icon-adornment"
@@ -82,7 +82,7 @@ function Login() {
           Login inválido.
         </Typography>
       )}
-      <Button type="submit">Entrar</Button>
+      <Button type="submit">Login</Button>
     </form>
     <Footer />
     </div>

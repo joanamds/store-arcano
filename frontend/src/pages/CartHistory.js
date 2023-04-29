@@ -26,7 +26,7 @@ function CartHistory() {
 
   function formatDate(dateString) {
     const [year, month, day] = dateString.split("T")[0].split("-");
-    return `Compra efetuada no dia: ${day}/${month}/${year}`;
+    return `Purchase completed on: ${month}/${day}/${year}`;
   }
   
   function calculateTotal(cartItems) {

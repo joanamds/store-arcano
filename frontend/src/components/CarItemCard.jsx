@@ -38,7 +38,7 @@ export default function CartItemCard({total, date, cartItems}) {
         subheader={`$${ total }`}
       />
       <CardActions disableSpacing>
-      <p>Detalhes da compra </p>
+      <p>Details</p>
         <ExpandMore
           expand={expanded}
           onClick={handleExpandClick}
