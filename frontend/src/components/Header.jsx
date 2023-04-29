@@ -7,12 +7,39 @@ import Typography from '@mui/material/Typography';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
-import AccountCircle from '@mui/icons-material/AccountCircle';
 import Tooltip from '@mui/material/Tooltip';
 import StoreIcon from '@mui/icons-material/Store';
 import HistoryIcon from '@mui/icons-material/History';
+import { Avatar } from '@mui/material';
 
-function Header2({ linkHome, linkCartHistory, linkProfile }) {
+function Header2({ linkHome, linkCartHistory, linkProfile, name }) {
+  function stringToColor(string) {
+    let hash = 0;
+    let i;
+  
+    /* eslint-disable no-bitwise */
+    for (i = 0; i < string.length; i += 1) {
+      hash = string.charCodeAt(i) + ((hash << 5) - hash);
+    }
+  
+    let color = '#';
+  
+    for (i = 0; i < 3; i += 1) {
+      const value = (hash >> (i * 8)) & 0xff;
+      color += `00${value.toString(16)}`.slice(-2);
+    }
+    /* eslint-enable no-bitwise */
+  
+    return color;
+  }
+  function stringAvatar(name) {
+    return {
+      sx: {
+        bgcolor: stringToColor(name),
+      },
+      children: `${name.split(' ')[0][0]}${name.split(' ')[1][0]}`,
+    };
+  }
   return (
     <AppBar sx={{margin: 0, padding: 0}}>
       <Container maxWidth="xl">
@@ -78,7 +105,7 @@ function Header2({ linkHome, linkCartHistory, linkProfile }) {
             </Button>
           </Box>
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Meu histórico de compras">
+            <Tooltip title="My cart history">
               <IconButton
                 component="a"
                 href={ linkCartHistory }
@@ -87,13 +114,14 @@ function Header2({ linkHome, linkCartHistory, linkProfile }) {
                 <HistoryIcon />
               </IconButton>
             </Tooltip>
-            <Tooltip title="Meu Perfil">
+            <Tooltip title="My profile">
               <IconButton
                 component="a"
                 href={ linkProfile }
                 sx={{ p: 0 }}
               >
-                <AccountCircle />
+                {/* <AccountCircle /> */}
+                <Avatar {...stringAvatar(name)} />
               </IconButton>
             </Tooltip>
           </Box>

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import BottomNavigation from '@mui/material/BottomNavigation';
-import { IconButton, Tooltip, Typography } from '@mui/material';
+import { IconButton, Tooltip } from '@mui/material';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 
@@ -31,6 +31,7 @@ export default function Footer() {
           <IconButton
             component="a"
             href="https://github.com/joanamds"
+            target="_blank"
             sx={{ p: 0, mr: 4}}
           >
             <GitHubIcon />
