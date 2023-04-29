@@ -79,7 +79,7 @@ function Login() {
       </FormControl>
       {error && (
         <Typography variant="caption" color="error">
-          Login inválido.
+          Invalid login.
         </Typography>
       )}
       <Button type="submit">Login</Button>
