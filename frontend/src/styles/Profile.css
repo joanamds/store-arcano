@@ -1,0 +1,28 @@
+.profile {
+  background-color: aliceblue;
+  width: 500px;
+  padding: 40px;
+  border-radius: 10px;
+}
+
+.profile-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.profile .MuiAvatar-root {
+  width: 100px;
+  height: 100px;
+  margin-right: 20px;
+}
+
+.profile .MuiAvatar-root .MuiSvgIcon-root {
+  font-size: 60px;
+}
+
+.avatar-container {
+  display: flex;
+  justify-content: center;
+}
