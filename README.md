@@ -7,7 +7,7 @@ As requisições deveriam ser feitas na rota "/carts" com os ids dos produtos co
 
 <details>
   <summary>
-    <strong>:whale: Rodando com Docker (opcional)</strong>
+    <strong>:whale: Rodando com Docker</strong>
   </summary><br>
 Clone o projeto
 
@@ -46,12 +46,43 @@ Instale as dependências
 ```bash
   npm install
 ```
+  
+ℹ️ Após rodar o docker-compose é possível: 
+  - Acessar o banco de dados na rota ``3002`` com a senha "123456";
+  - Acessar o frontend no navegador na rota ``http://localhost:3000``
+  - Acessar o backend na rota ``http://localhost:3001``
+
+</details>
+
+<details>
+  <summary>
+    <strong>:file_folder: Documentação da API</strong>
+  </summary><br>
+  
+- Após rodar o docker-compose é possível fazer requisições a API na url ``http://localhost:3001``
+  
+| Método HTTP | Endpoint   | Descrição               | 
+| :---------- | :--------- | :---------------------- |
+| POST        | `/login`   | Faz o login com usuários do banco de dados                        |
+| GET         | `/products`   | Retorna todos os produtos que estão a venda
+| GET         | `/users/:id` | Retorna o usuário de acordo com o id
+| GET         | `/cart-history/:id`| Retorna o histórico de compras do usuário
+
+Corpo da requisição
+- POST `/login`
+
+```json
+{
+ "email": "string",
+ "password": "string"
+}
+```
 
 </details>
 
 ## Referência
 
- - [Configurações iniciais retiradas do Projeto TFC](https://github.com/joanamds/projeto-tfc)
+ - [Configurações iniciais retiradas do Projeto TFC da Trybe](https://github.com/joanamds/projeto-tfc)
 
 ## Autores
 
