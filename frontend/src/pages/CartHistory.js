@@ -48,7 +48,7 @@ function CartHistory() {
       />
     <h2 className="welcome-message">Cart history</h2>
     <div className="cart-history">
-      { cartHistory ?
+      { cartHistory.length > 0 ?
         cartHistory.map((cart) => {
           return (
             <CartItemCard
@@ -58,7 +58,7 @@ function CartHistory() {
             />
           );
         }) 
-        : ''
+        : `You haven't made a purchase in our store yet`
       }
     </div>
     <Footer />
