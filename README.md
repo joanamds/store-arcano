@@ -100,6 +100,12 @@ Corpo da requisição
 
 </details>
 
+## Stack utilizada
+
+**Front-end:** React, React Hooks, Material UI
+
+**Back-end:** MySQL, Sequelize, Node.js, Arquitetura MSC(Model, Service e Controller), Docker, docker-compose
+
 ## Referência
 
  - [Configurações iniciais retiradas do Projeto TFC da Trybe](https://github.com/joanamds/projeto-tfc)
