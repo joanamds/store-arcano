@@ -80,6 +80,26 @@ Corpo da requisição
 
 </details>
 
+<details>
+  <summary>
+    <strong>:computer: Demonstração front-end</strong>
+  </summary><br>
+  
+  [screen-recording.webm](https://user-images.githubusercontent.com/106452876/235982232-1bc69bc8-9e6d-40bd-bdfa-358f52c86d99.webm)
+
+
+</details>
+
+<details>
+  <summary>
+    <strong>🗄️ Demonstração back-end</strong>
+  </summary><br>
+  
+[screen-recording (1).webm](https://user-images.githubusercontent.com/106452876/235986651-47f01155-e8d4-4b2a-9b1d-ea028b12993e.webm)
+
+
+</details>
+
 ## Referência
 
  - [Configurações iniciais retiradas do Projeto TFC da Trybe](https://github.com/joanamds/projeto-tfc)
@@ -87,10 +107,3 @@ Corpo da requisição
 ## Autores
 
 - [@joanamds](https://www.github.com/joanamds)
-
-
-## Demonstração
-
-Insira um gif ou um link de alguma demonstração
-
-
