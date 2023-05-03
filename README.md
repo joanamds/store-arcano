@@ -22,6 +22,7 @@ Entre no diretório do projeto e rode o comando
 ```
 
 - Back-end
+
 Entre no terminal do docker:
 
 ```bash
@@ -35,6 +36,7 @@ Instale as dependências
 ```
 
 - Front-end
+
 Entre no terminal do docker:
 
 ```bash
