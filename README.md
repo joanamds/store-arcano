@@ -88,9 +88,23 @@ Corpo da requisição
 
 <details>
   <summary>
-    <strong>:computer: Demonstração front-end</strong>
+    <strong>:computer: Front-end</strong>
   </summary><br>
   
+<strong>Organização das pastas</strong> 
+
+```bash
+store-arcano/
+  frontend/
+    public/
+    src/
+      components/
+      pages/
+      services/
+      styles/
+```
+<strong>Demonstração</strong>
+
   [screen-recording.webm](https://user-images.githubusercontent.com/106452876/235982232-1bc69bc8-9e6d-40bd-bdfa-358f52c86d99.webm)
 
 
@@ -98,9 +112,31 @@ Corpo da requisição
 
 <details>
   <summary>
-    <strong>🗄️ Demonstração back-end</strong>
+    <strong>🗄️ Back-end </strong>
   </summary><br>
-  
+
+```bash
+store-arcano/
+  backend/
+    src/
+      database/
+        api/
+        config/
+        controllers/
+        interfaces/
+        migrations/
+        models/
+        seeders/
+        services/
+        token/
+      routes/
+      tests/
+        mocks/
+      
+```
+
+<strong>Demonstração</strong>
+
 [screen-recording (1).webm](https://user-images.githubusercontent.com/106452876/235986651-47f01155-e8d4-4b2a-9b1d-ea028b12993e.webm)
 
 
