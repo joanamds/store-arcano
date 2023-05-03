@@ -25,7 +25,7 @@ Entre no diretório do projeto e rode o comando
 Entre no terminal do docker:
 
 ```bash
-  docker exec -it app_backend
+  docker exec -it app_backend sh
 ```
 
 Instale as dependências
@@ -38,7 +38,7 @@ Instale as dependências
 Entre no terminal do docker:
 
 ```bash
-  docker exec -it store-arcano-frontend-1
+  docker exec -it store-arcano-frontend-1 sh
 ```
 
 Instale as dependências
@@ -97,6 +97,27 @@ Corpo da requisição
   
 [screen-recording (1).webm](https://user-images.githubusercontent.com/106452876/235986651-47f01155-e8d4-4b2a-9b1d-ea028b12993e.webm)
 
+
+</details>
+
+<details>
+  <summary>
+    <strong>:white_check_mark: Testes</strong>
+  </summary><br>
+  
+Para esta aplicação foram criados testes para o back-end utilizando Mocha, Chai e Sinon. Para rodar os testes rode os seguintes comandos: 
+
+- Entre no terminal do docker:
+
+```bash
+  docker exec -it app_backend sh
+```
+
+- Depois rode o comando: 
+
+```bash
+  npm test
+```
 
 </details>
 
