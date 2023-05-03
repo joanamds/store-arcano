@@ -9,6 +9,10 @@ As requisições deveriam ser feitas na rota "/carts" com os ids dos produtos co
   <summary>
     <strong>:whale: Rodando com Docker</strong>
   </summary><br>
+
+## Docker
+O Docker é uma plataforma que permite criar, implantar e executar aplicativos em contêineres. Um contêiner é uma unidade de software leve e portátil que pode ser executada em qualquer lugar - desde máquinas locais até servidores na nuvem. Para rodar utilizando o Docker é preciso ter o Docker e o docker-compose instalado em sua máquina. 
+
 Clone o projeto
 
 ```bash
