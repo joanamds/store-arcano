@@ -65,7 +65,7 @@ export default function CartItemCard({total, date, cartItems}) {
                 </Avatar>
               </ListItemAvatar>
               <ListItemText primary={ cartItem.product.title }
-              secondary={`$${cartItem.product.price}`}/>
+              secondary={`$${cartItem.product.price} - Quantity: ${cartItem.quantity}`} />
             </ListItem>
           );
         })
