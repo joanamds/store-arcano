@@ -115,6 +115,8 @@ store-arcano/
     <strong>🗄️ Back-end </strong>
   </summary><br>
 
+<strong>Organização das pastas</strong> 
+
 ```bash
 store-arcano/
   backend/
