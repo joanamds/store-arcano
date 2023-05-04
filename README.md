@@ -169,7 +169,7 @@ Para esta aplicação foram criados testes para o back-end utilizando Mocha, Cha
 
 **Front-end:** React, React Hooks, Material UI
 
-**Back-end:** MySQL, Sequelize, Node.js, Docker, docker-compose
+**Back-end:** MySQL, Sequelize, Node.js, Docker, docker-compose, TypeScript
 
 ## Referência
 
